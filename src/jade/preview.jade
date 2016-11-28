@@ -7,7 +7,7 @@ html(lang="en")
         link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato")
         link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
         link(rel="stylesheet", href="css/board.css")
-        each item in ['js/form.js', 'js/collapse.js', 'js/modal.js']
+        each item in ['js/form.js', 'js/collapse.js', 'js/modal.js', 'js/carousel.js']
             script(type="text/javascript", src=item, defer)
     body
         header.page-header
@@ -31,6 +31,7 @@ html(lang="en")
                     button.btn.btn-green Green Button
                     button.btn.btn-red Red Button
                     button.btn.btn-orange Orange Button
+                    button.btn.btn-indigo Indigo Button
                     .btn-group
                         each item in ['First', 'Second', 'Third', 'Fours']
                             button.btn.btn-default= item
@@ -73,7 +74,7 @@ html(lang="en")
             .container
                 .title
                     h3 Modals
-                .content
+                .content(style="text-align:center;")
                     button.btn.btn-default(data-toggle="modal" data-target="#modal-1") Default Modal
                     button.btn.btn-default(data-toggle="modal" data-target="#modal-2") Flag Modal
             #modal-1.modal.fade
@@ -103,6 +104,22 @@ html(lang="en")
                                     label.form-input(for='password')
                                         input.form-control#password(type="password" label="Password")
                                 .form-group
-                                    button.btn.btn-blue(type="submit") Log In
+                                    button.btn.btn-indigo(type="submit") Log In
+            .container
+                .title
+                    h3 Carousel
+                .content
+                    .carousel
+                        .carousel-content
+                            .item
+                                img(src="img/card.jpg")
+                            .item
+                                img(src="img/card.jpg")
+                            .item
+                                img(src="img/card.jpg")
+                            .item
+                                img(src="img/card.jpg")
+                        button.carousel.left
+                        button.carousel.right
         footer.page-footer
             

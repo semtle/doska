@@ -1,15 +1,16 @@
-class Modal{
-    static close(e: HTMLElement){
-        
-    }
-    static toggle(e: HTMLElement){}
-}
-
 (function(){
     var modalButton = document.querySelectorAll('[data-toggle="modal"]');
     for(var i = 0; i < modalButton.length; i++){
         var element = modalButton[i];
         element.addEventListener('click', function(){
+            if(this.getAttribute('data-trigger')){
+                let el = <HTMLElement> this;
+                while(!el.classList.contains('modal')){
+                    el = el.parentElement;
+                }
+                el.classList.add('fade');
+                return;
+            }
             if(this.getAttributeNode('data-target')){
                 var target = this.getAttributeNode('data-target').value;
                 target = document.querySelector(target);
@@ -30,8 +31,11 @@ class Modal{
         });
     }
     window.onclick = function(e){
-        if(e.target == document.querySelector('.modal-dialog')){
-            document.querySelector('.modal-dialog').parentElement.classList.add('fade');
+        var ModalDialog = document.querySelectorAll('.modal-dialog');
+        for(var i = 0; i < ModalDialog.length; i++){
+            if(e.target == ModalDialog[i]){
+                ModalDialog[i].parentElement.classList.add('fade');
+            }    
         }
     };
 })();
