@@ -1,0 +1,14 @@
+{
+    "files": [
+        "src/js/test.ts",
+        "src/js/calendar.ts",
+        "src/js/carousel.ts",
+        "src/js/form.ts",
+        "src/js/modal.ts",
+        "src/js/collapse.ts"
+    ],
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "target": "es5"
+    }
+}

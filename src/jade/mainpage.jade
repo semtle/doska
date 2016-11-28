@@ -1,0 +1,43 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Bulletin Board Front-end Framework
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+        link(rel="stylesheet", href="css/board.css")
+        script(type="text/javascript", src="js/form.js")
+        style.
+            .city-form{
+                width: 100%;
+                box-sizing: border-box;
+                padding: 5px calc(50% - 600px);
+            }
+            @media screen and (max-width: 1200px){
+                .city-form{
+                    padding: 5px 10px;
+                }
+            }
+    body
+        header.page-header
+            .brand
+                a.brand-link(href="") Brand
+            .header-control
+                button.menu-collapse 
+                    i.material-icons menu
+                .collapse
+                    a.btn.btn-default(href="javascript:modal('#signin')") Sign initial
+                    a.btn.btn-default(href="?signup") Sign Up
+                    a.btn.btn-default(href="?cabinet") Account
+                    a.btn.btn-default(href="?logout") Sign Out
+        .city-form
+            ul.checklist
+                each item in ['city-1','city-2','city-3','city-4','city-5']
+                    li
+                        label(for=item class="list-check")
+                            input(id=item type="checkbox" class="list-control" label=item)
+        .page
+            .row
+        footer.page-footer
+            

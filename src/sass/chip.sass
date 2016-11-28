@@ -1,0 +1,73 @@
+// Colors
+$white: #f7f7f7
+$grey: #9E9E9E
+$black: #212121
+$red: #f44336
+$green: #4CAF50
+$blue: #2196F3
+$indigo: #3F51B5
+$orange: #FF5722
+// Font
+$font: 'Lato'
+
+.chip
+    display: inline-block
+    margin: 5px 0
+    margin-right: 20px
+    padding: 5px 10px
+    box-shadow: 1px 0 1px rgba(41,41,41,.3), -1px 0 1px rgba(41,41,41,.3), 1px 0 2px rgba(41,41,41,.5)
+    border-radius: 20px
+    position: relative
+.chip[letter],
+.chip[image]
+    padding-left: 20px
+    margin-left: 16px
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
+.chip[letter]::before
+    display: block
+    position: absolute
+    left: -16px
+    top: calc(50% - 16px)
+    width: 32px
+    height: 32px
+    font-weight: 900
+    content: attr(letter)
+    background: $white
+    color: $black
+    box-shadow: 1px 0 1px rgba(41,41,41,.3), -1px 0 1px rgba(41,41,41,.3), 1px 0 2px rgba(41,41,41,.5)
+    text-align: center
+    border-radius: 50%
+    line-height: 30px
+.chip[image] .image
+    display: block
+    position: absolute
+    left: -16px
+    top: calc(50% - 16px)
+    width: 32px
+    padding: 0
+    height: 32px
+    background: $white
+    box-shadow: 1px 0 1px rgba(41,41,41,.3), -1px 0 1px rgba(41,41,41,.3), 1px 0 2px rgba(41,41,41,.5)
+    text-align: center
+    border-radius: 50%
+    line-height: 30px
+.chip.chip-default,
+.chip.chip-default::before
+    background: $white
+    color: $black
+.chip.chip-blue,
+.chip.chip-blue::before
+    background: $blue
+    color: $white
+    border-color: $blue
+.chip.chip-green,
+.chip.chip-green::before
+    background: $green
+    color: $white
+    border-color: $green
+.chip.chip-red,
+.chip.chip-red::before
+    background: $red
+    color: $white
+    border-color: $red

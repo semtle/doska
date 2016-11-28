@@ -1,0 +1,57 @@
+// Colors
+$white: #f7f7f7
+$grey: #9E9E9E
+$black: #212121
+$red: #f44336
+$green: #4CAF50
+$blue: #2196F3
+$indigo: #3F51B5
+$orange: #FF5722
+// Font
+$font: 'Lato'
+
+.btn
+    margin: 5px
+    padding: 5px 10px
+    color: $black
+    font-family: $font
+    font-weight: 400
+    display: inline
+    text-decoration: none;
+    border: 1px solid #eee
+    border-radius: 2px
+    outline: 0;
+    background: $white
+    color: $black
+    box-shadow: 1px 0 1px rgba(41,41,41,.2), -1px 0 1px rgba(41,41,41,.2), 0 1px 1px rgba(41,41,41,.3)
+    transition: linear 150ms
+.btn:hover
+    box-shadow: 1px 0 1px rgba(41,41,41,.3), -1px 0 1px rgba(41,41,41,.3), 0 2px 3px 1px rgba(41,41,41,.4)
+.btn.btn-default
+    background: $white
+    color: $black
+.btn.btn-blue
+    background: $blue
+    color: $white
+    border-color: $blue
+.btn.btn-green
+    background: $green
+    color: $white
+    border-color: $green
+.btn.btn-red
+    background: $red
+    color: $white
+    border-color: $red
+.btn.btn-orange
+    background: $orange
+    color: $white
+    border-color: $orange
+
+.btn-group
+    display: table
+    border-radius: 4px
+    margin: 5px
+    .btn
+        float: left
+        border-radius: 0
+        margin: 0

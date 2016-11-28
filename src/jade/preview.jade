@@ -1,0 +1,92 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Bulletin Board Front-end Framework
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+        link(rel="stylesheet", href="css/board.css")
+        each item in ['js/form.js', 'js/collapse.js', 'js/modal.js']
+            script(type="text/javascript", src=item, defer)
+    body
+        header.page-header
+            .brand
+                a.brand-link(href="") Brand
+            .header-control
+                button.menu-collapse(onclick="menuToggle('#menu-content')") 
+                    i.material-icons menu
+                .collapse(id='menu-content')
+                    a.btn.btn-default(href="javascript:modal('#signin')") Sign initial
+                    a.btn.btn-default(href="?signup") Sign Up
+                    a.btn.btn-default(href="?cabinet") Account
+                    a.btn.btn-default(href="?logout") Sign Out
+        .page
+            .container
+                .title
+                    h3 Buttons
+                .content
+                    button.btn.btn-default Default Button
+                    button.btn.btn-blue Blue Button
+                    button.btn.btn-green Green Button
+                    button.btn.btn-red Red Button
+                    button.btn.btn-orange Orange Button
+                    .btn-group
+                        each item in ['First', 'Second', 'Third', 'Fours']
+                            button.btn.btn-default= item
+            .container
+                .title
+                    h3 Chips
+                .content
+                    each item in ['chip chip-default', 'chip chip-blue', 'chip chip-green', 'chip chip-red']
+                        div
+                            span(class=item) Simple Chip
+                            span(class=item letter="L") Letter Chip
+                            span(class=item image="img/flower.jpg") Image Chip
+                                img.image(src="img/flower.jpg")
+            .container
+                .title
+                    h3 Panels
+                .content
+                    .panel.panel-default panel
+            .container
+                .title
+                    h3 Forms
+                .content
+                    .panel.panel-default
+                        ul.checklist
+                            each item in ['check-1','check-2','check-3','check-4','check-5']
+                                li
+                                    label(for=item class="list-check")
+                                        input(id=item type="checkbox" class="list-control" label=item)
+                        each item, i in ['text', 'email', 'password']
+                            - var id = 'type-'+i
+                            .form-group
+                                label.form-input(for=id)
+                                    input.form-control(id=id type=item label=item)
+                        .form-group
+                            label.form-file(id='type-4')
+                                input.file-control(type="file" id="type-4" label="Upload File" data-src="img/flower.jpg" accept="image/*")
+                        .form-group
+                            label.form-check(id="type-5")
+                                input.form-control(type="checkbox" id="type-5" label="Check Label")
+            .container
+                .title
+                    h3 Modals
+                .content
+                    button.btn.btn-default(data-toggle="modal" data-target="#modal-1") Default Modal
+                    button.btn.btn-default(data-toggle="modal" data-target="#modal-2") Flag Modal
+            #modal-1.modal.fade
+                .modal-dialog
+                    .modal-content
+                        .modal-header
+                            h3 Modal Header
+                            button.modal-close
+                                i.material-icons close
+                        .modal-body
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        .modal-footer
+                            button.btn.btn-default(data-toggle="modal" data-trigger="close") Close Modal
+            #modal-2.modal.flag.fade
+        footer.page-footer
+            
