@@ -63,7 +63,7 @@ window.onload = function(){
                     element.addEventListener('focus', function(){
                         this.parentElement.classList.add('focus');
                     });
-                    element.addEventListener('focusout', function(){
+                    element.addEventListener('blur', function(){
                         this.parentElement.classList.remove('focus');
                     });
                 }
@@ -100,7 +100,7 @@ window.onload = function(){
                     element.addEventListener('focus', function(){
                         this.parentElement.classList.add('focus');
                     });
-                    element.addEventListener('focusout', function(){
+                    element.addEventListener('blur', function(){
                         this.parentElement.classList.remove('focus');
                     });
                 }
@@ -137,7 +137,7 @@ window.onload = function(){
                     element.addEventListener('focus', function(){
                         this.parentElement.classList.add('focus');
                     });
-                    element.addEventListener('focusout', function(){
+                    element.addEventListener('blur', function(){
                         this.parentElement.classList.remove('focus');
                     });
                 }

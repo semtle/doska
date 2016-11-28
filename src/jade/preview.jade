@@ -88,5 +88,21 @@ html(lang="en")
                         .modal-footer
                             button.btn.btn-default(data-toggle="modal" data-trigger="close") Close Modal
             #modal-2.modal.flag.fade
+                .modal-dialog
+                    .modal-content
+                        .modal-header
+                            h3 Sign In
+                            button.modal-close
+                                i.material-icons close
+                        .modal-body
+                            form
+                                .form-group
+                                    label.form-input(for='account')
+                                        input.form-control#account(type="text" label="Login")
+                                .form-group
+                                    label.form-input(for='password')
+                                        input.form-control#password(type="password" label="Password")
+                                .form-group
+                                    button.btn.btn-blue(type="submit") Log In
         footer.page-footer
             

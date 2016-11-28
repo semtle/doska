@@ -19,6 +19,8 @@ $font: 'Lato'
     height: 100%
     z-index: 99999
     visibility: visible
+    opacity: 1
+    transition: opacity linear 300ms
     .modal-dialog
         position: fixed
         width: 100%
@@ -27,13 +29,15 @@ $font: 'Lato'
         background: rgba(41,41,41,.8)
         overflow: scroll
         padding: 10% calc(50% - 300px)
-        transition: linear 200ms
+        opacity: 1
+        transition: linear 300ms
         .modal-content
             width: 600px
             background: $white
             border-radius: 4px
             overflow: hidden
-            transition: ease-in-out 200ms
+            opacity: 1
+            transition: ease-in-out 300ms
             .modal-header
                 position: relative
                 text-align: center
@@ -53,9 +57,12 @@ $font: 'Lato'
                 text-align: right
 .modal.fade
     visibility: hidden
-    transtion: linear 0ms 200ms
+    opacity: 0
+    transtion: opacity linear 300ms, visibility linear 0ms 300ms
     .modal-dialog
-        transition: linear 200ms
+        opacity: 0
+        transition: linear 300ms
         .modal-content
             transform: translateY(-300px)
-            transition: ease-in-out 200ms
+            opacity: 0
+            transition: ease-in-out 300ms
