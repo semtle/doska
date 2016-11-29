@@ -109,17 +109,52 @@ html(lang="en")
                 .title
                     h3 Carousel
                 .content
-                    .carousel
+                    #myCarousel.carousel
                         .carousel-content
                             .item
                                 img(src="img/card.jpg")
                             .item
-                                img(src="img/card.jpg")
+                                img(src="img/card.jpg" style="filter: invert(100%)")
                             .item
                                 img(src="img/card.jpg")
                             .item
-                                img(src="img/card.jpg")
+                                img(src="img/card.jpg" style="filter: grayscale(100%)")
                         button.carousel.left
+                            i.material-icons &#xE314;
                         button.carousel.right
+                            i.material-icons &#xE315;
+            .container
+                .title
+                    h3 Responsive
+                .content
+                    .row
+                        each item in ['col x-1','col x-11','col x-2','col x-10','col x-3','col x-9','col x-4','col x-8','col x-5','col x-7','col x-6','col x-6','col x-12']
+                            div(class=item)
+                                .panel=item
+            .container
+                .title
+                    h3 Cards
+                .content
+                    .row
+                        each item in ['card card-default', 'card card-indigo', 'card card-green', 'card card-red']
+                            .col.x-3
+                                div(class=item)
+                                    .card-picture
+                                        img(src="img/card.jpg")
+                                        .price from $2000
+                                    .card-body
+                                        .card-title
+                                            h3 Card Title
+                                        .card-location
+                                            a.location(href="")
+                                                i.material-icons &#xE0C8;
+                                                | Moscow City
+                                        .card-tags
+                                            ul.tags
+                                                each icon in ['wifi', 'tv', 'restaurant']
+                                                    li
+                                                        i.material-icons= icon
+                                        .card-mark
+                                            a.mark(href="") Mark
         footer.page-footer
             
