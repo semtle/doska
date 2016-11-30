@@ -1,0 +1,129 @@
+// Colors
+$white: #f7f7f7
+$grey: #9E9E9E
+$black: #212121
+$red: #f44336
+$green: #4CAF50
+$blue: #2196F3
+$indigo: #3F51B5
+$orange: #FF5722
+// Font
+$font: 'Lato'
+
+.calendar
+    width: 100%
+    box-sizing: border-box
+    padding: 0
+    font-family: $font
+    box-shadow: 1px 0 1px rgba(41,41,41,.3), -1px 0 1px rgba(41,41,41,.3), 0 2px 2px rgba(41,41,41,.4)
+    table.calendar-content
+        width: 100%
+        -webkit-border-horizontal-spacing: 0
+        -webkit-border-vertical-spacing: 0
+        border-collapse: collapse
+        table-layout: fixed
+        // overflow: hidden
+        cursor: default
+        thead.calendar-heading
+            width: 100%
+            font-size: 20px
+            text-align: center
+            box-shadow: 0 1px 5px rgba(41,41,41,.5)
+            th
+                padding: 10px 0
+                font-weight: 500
+        tbody.calendar-headers
+            text-align: center
+            font-weight: 400
+            font-size: 14px
+            color: #777
+            td
+                padding-top: 15px
+        tbody.calendar-body
+            text-align: center
+            td
+                min-height: 100%
+                vertical-align: -webkit-baseline-middle
+                line-height: 42px
+            td:hover
+                background: #d0d0d0
+            td.past
+                color: $grey
+            td.booked
+                background: #D32F2F
+                color: $white
+                position: relative
+            td.booked:hover::after
+                content: 'Забронировано'
+                font-family: sans-serif
+                position: absolute
+                top: -105%
+                left: calc(50% - 65px)
+                width: 130px
+                background: $black
+                color: $white
+                z-index: 999
+                font-size: 14px
+                border-radius: 4px 
+.calendar.calendar-default
+    table.calendar-content
+        thead.calendar-heading
+            background: $white
+            color: $black
+        tbody.calendar-headers
+            color: $grey
+        tbody.calendar-body
+            color: $black
+.calendar.calendar-indigo
+    table.calendar-content
+        background: $indigo
+        thead.calendar-heading
+            background: $indigo
+            color: $white
+            box-shadow: 0 1px 3px #3f51b5 rgba(63, 81, 181,.5)
+        tbody.calendar-headers
+            color: #d0d0d0
+        tbody.calendar-body
+            color: $white
+            td:hover
+                background: $blue
+            td.past
+                color: #bdbdbd
+            td.booked
+                background: #283593
+                color: $white
+.calendar.calendar-green
+    table.calendar-content
+        background: $green
+        thead.calendar-heading
+            background: $green
+            color: $white
+            box-shadow: 0 1px 3px #3f51b5 rgba(63, 81, 181,.5)
+        tbody.calendar-headers
+            color: #e7e7e7
+        tbody.calendar-body
+            color: $white
+            td:hover
+                background: #81C784
+            td.past
+                color: #bdbdbd
+            td.booked
+                background: #2E7D32
+                color: $white
+.calendar.calendar-red
+    table.calendar-content
+        background: $red
+        thead.calendar-heading
+            background: $red
+            color: $white
+            box-shadow: 0 1px 3px #3f51b5 rgba(63, 81, 181,.5)
+        tbody.calendar-headers
+            color: #e7e7e7
+        tbody.calendar-body
+            color: $white
+            td:hover
+                background: #E57373
+            td.past
+                color: #bdbdbd
+            td.booked
+                color: $white

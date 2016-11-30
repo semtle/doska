@@ -51,6 +51,50 @@ ul.checklist
             .list-control:checked + .list-label::after
                 left: 0
                 width: 100%
+ul.checklist.horisontal
+    width: auto
+    max-width: 300px
+    display: block
+    margin: 10px 0
+    padding: 0 5px
+    position: relative
+    text-align: left
+    li
+        display: block
+        margin: 0 10px
+        font-family: $font
+        font-size: 18px
+        position: relative
+        .list-check
+            cursor: pointer
+            .list-control
+                display: none
+            .list-label
+                color: #999
+                display: block
+                width: 100%
+                padding: 4px 7px 4px 25px
+                line-height: 30px
+                background: transparent
+                vertical-align: middle
+            .list-label::after
+                content: ''
+                display: block
+                position: absolute
+                top: 0
+                left: 0
+                width: 3px
+                height: 100%
+                background: $indigo
+                transition: linear 100ms
+            .list-label:hover::after
+                width: 9px
+                left: 0
+            .list-control:checked + .list-label
+                color: $indigo
+            .list-control:checked + .list-label::after
+                left: 0
+                width: 15px
 
 
 // Type Inputs

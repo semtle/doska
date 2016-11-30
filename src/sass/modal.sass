@@ -11,6 +11,7 @@ $orange: #FF5722
 $font: 'Lato'
 
 .modal
+    box-sizing: border-box
     display: block
     position: fixed
     top: 0
@@ -21,17 +22,21 @@ $font: 'Lato'
     visibility: visible
     opacity: 1
     transition: opacity linear 300ms
+    *
+        box-sizing: border-box
     .modal-dialog
+        box-sizing: border-box
         position: fixed
         width: 100%
         height: 100%
         max-height: 100%
         background: rgba(41,41,41,.8)
-        overflow: scroll
+        overflow-y: scroll
         padding: 10% calc(50% - 300px)
         opacity: 1
         transition: linear 300ms
         .modal-content
+            box-sizing: border-box
             width: 100%
             max-width: 600px
             background: $white
@@ -43,6 +48,7 @@ $font: 'Lato'
                 position: relative
                 text-align: center
                 padding: 5px 10px
+                box-sizing: border-box
                 .modal-close
                     position: absolute
                     top: 5px
@@ -51,10 +57,12 @@ $font: 'Lato'
                     border: 0
                     background: transparent
             .modal-body
+                box-sizing: border-box
                 padding: 5px 10px
                 // box-shadow: inset 0 2px 2px rgba(41,41,41,.2), inset 0 -2px 2px rgba(41,41,41,.2)
                 box-shadow: inset 0 1px 2px 1px rgba(41,41,41,.2),inset 0 -1px 2px 1px rgba(41,41,41,.2)
             .modal-footer
+                box-sizing: border-box
                 padding: 5px 10px
                 text-align: right
 .modal.fade
@@ -72,8 +80,8 @@ $font: 'Lato'
     .modal-dialog
         padding: 10% calc(50% - 200px)
         .modal-content
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%)
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%)
             padding-bottom: 15px
             padding-top: 10px
             max-width: 400px
@@ -81,6 +89,7 @@ $font: 'Lato'
             .modal-header
                 h1,h2,h3,h4,h5,h6
                     font-weight: 400
+                    width: 100%
             .modal-body
                 box-shadow: none
                 text-align: center
@@ -94,3 +103,39 @@ $font: 'Lato'
                     text-align: center
                     input
                         text-align: center
+
+@media screen and (max-width: 480px) and (orientation: portrait)
+    .modal
+        width: auto
+        .modal-dialog
+            padding: 0
+            padding-top: 100px
+            .modal-content
+                max-width: 480px
+                width: 100%
+                border-radius: 0
+                .modal-header
+                    text-align: center
+                    padding: 5px 10px
+                    .modal-close
+                        top: 10px
+                        right: 10px
+                .modal-body
+                    padding: 0
+                .modal-footer
+                    padding: 0
+    .modal.flag
+        .modal-dialog
+            padding: 0
+            padding-top: 100px
+            .modal-content
+                -webkit-clip-path: none
+                clip-path: none
+                max-width: 480px
+                width: 100%
+                .modal-body
+                    .form-group
+                        width: 100%
+                        text-align: center
+                        input
+                            text-align: center

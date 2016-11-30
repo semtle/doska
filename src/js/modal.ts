@@ -9,12 +9,15 @@
                     el = el.parentElement;
                 }
                 el.classList.add('fade');
+                document.body.style.overflowY = 'auto';
                 return;
             }
             if(this.getAttributeNode('data-target')){
                 var target = this.getAttributeNode('data-target').value;
                 target = document.querySelector(target);
                 target.classList.toggle('fade');
+                document.body.style.overflowY = 'hidden';
+                return;
             }
         });
     }
@@ -29,12 +32,14 @@
             }
             el.classList.add('fade');
         });
+        document.body.style.overflowY = 'auto';
     }
     window.onclick = function(e){
         var ModalDialog = document.querySelectorAll('.modal-dialog');
         for(var i = 0; i < ModalDialog.length; i++){
             if(e.target == ModalDialog[i]){
                 ModalDialog[i].parentElement.classList.add('fade');
+                document.body.style.overflowY = 'auto';
             }    
         }
     };

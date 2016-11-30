@@ -60,6 +60,11 @@ html(lang="en")
                                 li
                                     label(for=item class="list-check")
                                         input(id=item type="checkbox" class="list-control" label=item)
+                        ul.checklist.horisontal
+                            each item in ['check-1h','check-2h','check-3h','check-4h','check-5h']
+                                li
+                                    label(for=item class="list-check")
+                                        input(id=item type="checkbox" class="list-control" label=item)
                         each item, i in ['text', 'email', 'password']
                             - var id = 'type-'+i
                             .form-group
@@ -77,34 +82,34 @@ html(lang="en")
                 .content(style="text-align:center;")
                     button.btn.btn-default(data-toggle="modal" data-target="#modal-1") Default Modal
                     button.btn.btn-default(data-toggle="modal" data-target="#modal-2") Flag Modal
-            #modal-1.modal.fade
-                .modal-dialog
-                    .modal-content
-                        .modal-header
-                            h3 Modal Header
-                            button.modal-close
-                                i.material-icons close
-                        .modal-body
-                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        .modal-footer
-                            button.btn.btn-default(data-toggle="modal" data-trigger="close") Close Modal
-            #modal-2.modal.flag.fade
-                .modal-dialog
-                    .modal-content
-                        .modal-header
-                            h3 Sign In
-                            button.modal-close
-                                i.material-icons close
-                        .modal-body
-                            form
-                                .form-group
-                                    label.form-input(for='account')
-                                        input.form-control#account(type="text" label="Login")
-                                .form-group
-                                    label.form-input(for='password')
-                                        input.form-control#password(type="password" label="Password")
-                                .form-group
-                                    button.btn.btn-indigo(type="submit") Log In
+                #modal-1.modal.fade
+                    .modal-dialog
+                        .modal-content
+                            .modal-header
+                                h3 Modal Header
+                                button.modal-close
+                                    i.material-icons close
+                            .modal-body
+                                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            .modal-footer
+                                button.btn.btn-default(data-toggle="modal" data-trigger="close") Close Modal
+                #modal-2.modal.flag.fade
+                    .modal-dialog
+                        .modal-content
+                            .modal-header
+                                h3 Sign In
+                                button.modal-close
+                                    i.material-icons close
+                            .modal-body
+                                form
+                                    .form-group
+                                        label.form-input(for='account')
+                                            input.form-control#account(type="text" label="Login")
+                                    .form-group
+                                        label.form-input(for='password')
+                                            input.form-control#password(type="password" label="Password")
+                                    .form-group
+                                        button.btn.btn-indigo(type="submit") Log In
             .container
                 .title
                     h3 Carousel
@@ -151,10 +156,127 @@ html(lang="en")
                                                 | Moscow City
                                         .card-tags
                                             ul.tags
-                                                each icon in ['wifi', 'tv', 'restaurant']
+                                                each icon in ['wifi', 'tv', 'restaurant', 'pool']
                                                     li
                                                         i.material-icons= icon
                                         .card-mark
                                             a.mark(href="") Mark
+            .container
+                .title
+                    h3 Calendar
+                .content
+                    .row
+                        each calendar in ['calendar calendar-default', 'calendar calendar-indigo', 'calendar calendar-green', 'calendar calendar-red']
+                            .col.x-3
+                                div(class=calendar)
+                                    table.calendar-content
+                                        thead.calendar-heading
+                                            tr
+                                                th(colspan="7") January 2017
+                                        tbody.calendar-headers
+                                            tr
+                                                each day in ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                                                    td= day
+                                        tbody.calendar-body
+                                            tr
+                                                td.past 26
+                                                td.past 27
+                                                td.past 28
+                                                td.past 29
+                                                td.past 30
+                                                td.past 31
+                                                td.booked 1
+                                            tr
+                                                td.booked 2
+                                                td.booked 3
+                                                td.booked 4
+                                                td.booked 5
+                                                td.booked 6
+                                                td.booked 7
+                                                td.booked 8
+                                            tr
+                                                td 9
+                                                td 10
+                                                td 11
+                                                td 12
+                                                td 13
+                                                td.booked 14
+                                                td 15
+                                            tr
+                                                td 16
+                                                td 17
+                                                td.booked 18
+                                                td.booked 19
+                                                td.booked 20
+                                                td 21
+                                                td 22
+                                            tr
+                                                td 23
+                                                td.booked 24
+                                                td 25
+                                                td.booked 26
+                                                td.booked 27
+                                                td 28
+                                                td 29
+                                            tr
+                                                td 30
+                                                td 31
+                                                td.past 1
+                                                td.past 2
+                                                td.past 3
+                                                td.past 4
+                                                td.past 5
+            .container
+                .title
+                    h3 Collapse
+                .content
+                    .collapse
+                        .collapse-header
+                            h4 Collapse Header
+                        .collapse-content
+                            p   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                | Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                | Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                | Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            .container
+                .title
+                    h3 Lightbox
+                .content
+                    .lightbox
+                        .lightbox-viewport
+                            .lightbox-content
+                                .image.active
+                                    img(src="img/card.jpg")
+                                .image
+                                    img(src="img/card.jpg")
+                                .image
+                                    img(src="img/card.jpg")
+                                .image
+                                    img(src="img/card.jpg")
+                            button.lightbox.left
+                                i.material-icons &#xE314;
+                            button.lightbox.right
+                                i.material-icons &#xE315;
+                        .lightbox-list
+                            ul
+                                li 1
+                                li 2
+                                li 3
+                                li 4
+                                li 5
+                                li 6
+                                li 7
+            .container
+                .title
+                    h3 Tabs
+                .content
+            .container
+                .title
+                    h3 Control Panel
+                .content
+            .container
+                .title
+                    h3 Alerts
+                .content
         footer.page-footer
             

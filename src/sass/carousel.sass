@@ -48,10 +48,12 @@ $font: 'Lato'
             visibility: visible
         .item.left
             transform: translateX(-100%)
-            transition: transform ease-in-out 500ms
+            // transition: transform ease-in-out 500ms
+            transition: transform ease 500ms
         .item.right
             transform: translateX(100%)
-            transition: transform ease-in-out 500ms
+            // transition: transform ease-in-out 500ms
+            transition: transform ease 500ms
     button.carousel.left
         position: absolute
         top: 0
@@ -64,6 +66,7 @@ $font: 'Lato'
         text-shadow: 0 0 2px #000
         color: #fff
         outline: 0
+        cursor: pointer
         *
             font-size: 48px
     button.carousel.right
@@ -78,5 +81,16 @@ $font: 'Lato'
         text-shadow: 0 0 2px #000
         color: #fff
         outline: 0
+        cursor: pointer
         *
             font-size: 48px
+@media screen and (max-width: 768px)
+    .carousel
+        .carousel.right
+            width: 20%!important
+            padding: 0
+            left: 80%
+        .carousel.left
+            width: 20%!important
+            padding: 0
+            left: 0
