@@ -2,9 +2,9 @@
     var Toggles = document.querySelectorAll('[data-toggle="lightbox"]');
     for(var i = 0; i < Toggles.length; i++){
         Toggles[i].addEventListener('click', function(){
-            console.log('lightbox click');
+            // console.log('lightbox click');
             if(this.getAttributeNode('data-target') && this.getAttribute('data-target') != null){
-                console.log(this.getAttribute('data-target'));
+                // console.log(this.getAttribute('data-target'));
                 document.querySelector(this.getAttribute('data-target')).classList.toggle('fade');
                 document.body.style.overflowY = 'hidden';
             }
@@ -28,6 +28,7 @@
         var ListBox = Box.getElementsByClassName('lightbox-list')[0];
         let translate = 0;
         ListBox.addEventListener('wheel', function(e){
+            e.preventDefault();
             // var wDelta = e.deltaY > 0 ? 'down' : 'up';
             var delta = e.deltaY || e.detail || e.wheelDelta;
             // console.log(ListBox.querySelector('ul').scrollWidth);
@@ -88,4 +89,23 @@
             }    
         }
     });
+    // let Pressed = false,
+    //     PosX = 0,
+    //     dragTranslate = 0;
+    // window.addEventListener('mousemove', function(e){
+    //     document.querySelector('#debug').innerHTML = String(e.pageX);
+    //     if(Pressed === true){
+    //         dragTranslate = PosX - e.pageX;
+    //         Box.getElementsByClassName('lightbox-list')[0].querySelector('ul').style.transform = 'translateX(-'+dragTranslate+'px)';
+    //     }
+    // });
+    // window.addEventListener('mousedown', function(e){
+    //     Pressed = true;
+    //     PosX = e.pageX;
+    //     console.log('down');
+    // });
+    // window.addEventListener('mouseup', function(e){
+    //     Pressed = false;
+    //     console.log('up');
+    // });
 })();

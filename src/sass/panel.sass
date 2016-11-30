@@ -29,7 +29,6 @@ $font: 'Lato'
         border-collapse: collapse
         background: $white
         color: $black
-        transform: translateZ(1px)
         box-shadow: 0 1px 2px rgba(41,41,41,.2)
         .tab
             display: table-cell
@@ -67,6 +66,56 @@ $font: 'Lato'
             padding: 10px
         .tab-container.active
             display: block
+.panel.control-panel
+    display: table
+    width: 100%
+    box-sizing: border-box
+    overflow: hidden
+    padding: 0
+    .panel-menu
+        // float: left
+        display: table-cell
+        width: 25%
+        box-sizing: border-box
+        position: relative
+        vertical-align: top
+        box-shadow: 1px 0 3px $grey
+        .menu-group
+            position: relative
+            top: 0
+            width: 100%
+            display: block
+            .menu-header
+                background: $red
+                color: $white
+                padding: 10px 10px
+                font-size: 20px
+            .menu-control
+                .btn-menu
+                    font-size: 18px
+                    box-sizing: border-box
+                    display: block
+                    text-decoration: none
+                    padding: 5px 10px
+                    background: $white
+                    color: $black
+                    border: 0
+                    width: 100%
+                    text-align: left
+                    white-space: nowrap
+                .btn-menu:hover
+                    background: #e0e0e0
+    .panel-content
+        // float: left
+        display: table-cell
+        width: 75%
+        box-sizing: border-box
+        position: relative
+        padding-left: 3px
+        iframe
+            position: relative
+            width: 100%
+            height: 100%
 
 @media only screen and (max-width: 768px)
     .panel

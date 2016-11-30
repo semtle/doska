@@ -310,9 +310,23 @@ html(lang="en")
                 .title
                     h3 Control Panel
                 .content
+                    .panel.control-panel
+                        .panel-menu
+                            - for(i = 0; i < 6; i++)
+                                .menu-group
+                                    .menu-header Menu Header
+                                    .menu-control
+                                        a.btn-menu(href="//google.com", target="viewport") Google
+                                        a.btn-menu(href="//yandex.com", target="viewport") Yandex
+                                        button.btn-menu Facebook
+                                        button.btn-menu Twitter
+                        .panel-content
+                            iframe(src="preview.html", frameborder="0", name="viewport")
             .container
                 .title
                     h3 Alerts
                 .content
+
         footer.page-footer
             
+        #debug(style="position:fixed; bottom: 0; left: 0; z-index: 9999;")
