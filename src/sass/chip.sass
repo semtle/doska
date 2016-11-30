@@ -13,7 +13,7 @@ $font: 'Lato'
 .chip
     display: inline-block
     margin: 5px 0
-    margin-right: 20px
+    margin-right: 6px
     padding: 5px 10px
     box-shadow: 1px 0 1px rgba(41,41,41,.3), -1px 0 1px rgba(41,41,41,.3), 1px 0 2px rgba(41,41,41,.5)
     border-radius: 20px
@@ -21,7 +21,7 @@ $font: 'Lato'
 .chip[letter],
 .chip[image]
     padding-left: 20px
-    margin-left: 16px
+    margin-left: 16px    
     border-top-left-radius: 0
     border-bottom-left-radius: 0
 .chip[letter]::before
@@ -61,6 +61,11 @@ $font: 'Lato'
     background: $blue
     color: $white
     border-color: $blue
+.chip.chip-indigo,
+.chip.chip-indigo::before
+    background: $indigo
+    color: $white
+    border-color: $indigo
 .chip.chip-green,
 .chip.chip-green::before
     background: $green

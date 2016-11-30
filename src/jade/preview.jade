@@ -133,9 +133,9 @@ html(lang="en")
                                 img(src="img/card.jpg")
                             .item
                                 img(src="img/card.jpg" style="filter: grayscale(100%)")
-                        button.carousel.left
+                        button.carousel-left
                             i.material-icons &#xE314;
-                        button.carousel.right
+                        button.carousel-right
                             i.material-icons &#xE315;
             .container
                 .title
@@ -251,7 +251,7 @@ html(lang="en")
                 .title
                     h3 Lightbox
                 .content
-                    img.img-content(src="img/card.jpg" data-toggle="lightbox" data-target="#myLightbox")
+                    img.img-content(src="img/card.jpg", data-toggle="lightbox", data-target="#myLightbox")
                     #myLightbox.lightbox.fade
                         button.lightbox-close &times;
                         .lightbox-viewport

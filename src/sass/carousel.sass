@@ -54,7 +54,7 @@ $font: 'Lato'
             transform: translateX(100%)
             // transition: transform ease-in-out 500ms
             transition: transform ease 500ms
-    button.carousel.left
+    button.carousel-left
         position: absolute
         top: 0
         left: 0
@@ -74,7 +74,7 @@ $font: 'Lato'
         transition: linear 200ms
         *
             font-size: 48px
-    button.carousel.right
+    button.carousel-right
         position: absolute
         top: 0
         right: 0
@@ -94,16 +94,16 @@ $font: 'Lato'
         transition: linear 200ms
         *
             font-size: 48px
-    button.carousel.left:hover,
-    button.carousel.right:hover
+    button.carousel-left:hover,
+    button.carousel-right:hover
         opacity: 1
 @media screen and (max-width: 768px)
     .carousel
-        .carousel.right
+        .carousel-right
             width: 20%!important
             padding: 0
             left: 80%
-        .carousel.left
+        .carousel-left
             width: 20%!important
             padding: 0
             left: 0
