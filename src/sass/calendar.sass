@@ -17,7 +17,7 @@ $font: 'Lato'
     font-family: $font
     box-shadow: 1px 0 1px rgba(41,41,41,.3), -1px 0 1px rgba(41,41,41,.3), 0 2px 2px rgba(41,41,41,.4)
     table.calendar-content
-        width: 100%
+        width: 100.5%
         -webkit-border-horizontal-spacing: 0
         -webkit-border-vertical-spacing: 0
         border-collapse: collapse
@@ -121,8 +121,11 @@ $font: 'Lato'
             color: #e7e7e7
         tbody.calendar-body
             color: $white
-            td:hover
-                background: #E57373
+            td:hover,
+            td.booked:hover,
+            td.past:hover
+                background: #FFEBEE
+                color: $red
             td.past
                 color: #bdbdbd
             td.booked
