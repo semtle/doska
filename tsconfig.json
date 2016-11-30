@@ -5,7 +5,8 @@
         "src/js/carousel.ts",
         "src/js/form.ts",
         "src/js/modal.ts",
-        "src/js/collapse.ts"
+        "src/js/collapse.ts",
+        "src/js/lightbox.ts"
     ],
     "compilerOptions": {
         "noImplicitAny": true,

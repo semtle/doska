@@ -7,8 +7,9 @@ html(lang="en")
         link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato")
         link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
         link(rel="stylesheet", href="css/board.css")
-        each item in ['js/form.js', 'js/collapse.js', 'js/modal.js', 'js/carousel.js']
-            script(type="text/javascript", src=item, defer)
+        //- each item in ['js/form.js', 'js/collapse.js', 'js/modal.js', 'js/carousel.js', 'js/lightbox.js']
+        //-     script(type="text/javascript", src=item, defer)
+        script(type="text/javascript", src="js/board.js", defer)
     body
         header.page-header
             .brand
@@ -74,8 +75,16 @@ html(lang="en")
                             label.form-file(id='type-4')
                                 input.file-control(type="file" id="type-4" label="Upload File" data-src="img/flower.jpg" accept="image/*")
                         .form-group
-                            label.form-check(id="type-5")
+                            .form-header
+                                h4 Checklist
+                            label.form-check.out(id="type-5")
                                 input.form-control(type="checkbox" id="type-5" label="Check Label")
+                            label.form-check.out(id="type-6")
+                                input.form-control(type="checkbox" id="type-6" label="Check Label")
+                            label.form-check.out(id="type-7")
+                                input.form-control(type="checkbox" id="type-7" label="Check Label")
+                            label.form-check.out(id="type-8")
+                                input.form-control(type="checkbox" id="type-8" label="Check Label")
             .container
                 .title
                     h3 Modals
@@ -242,34 +251,61 @@ html(lang="en")
                 .title
                     h3 Lightbox
                 .content
-                    .lightbox
+                    img.img-content(src="img/card.jpg" data-toggle="lightbox" data-target="#myLightbox")
+                    #myLightbox.lightbox.fade
+                        button.lightbox-close &times;
                         .lightbox-viewport
                             .lightbox-content
-                                .image.active
-                                    img(src="img/card.jpg")
                                 .image
                                     img(src="img/card.jpg")
                                 .image
-                                    img(src="img/card.jpg")
+                                    img(src="img/card.jpg" style="filter: grayscale(100%)")
                                 .image
                                     img(src="img/card.jpg")
-                            button.lightbox.left
+                                .image
+                                    img(src="img/card.jpg" style="filter: blur(2px)")
+                                .image
+                                    img(src="img/card.jpg")
+                                .image
+                                    img(src="img/card.jpg" style="filter: grayscale(100%)")
+                                .image
+                                    img(src="img/card.jpg")
+                                .image
+                                    img(src="img/card.jpg" style="filter: blur(2px)")
+                            button.lightbox-left
                                 i.material-icons &#xE314;
-                            button.lightbox.right
+                            button.lightbox-right
                                 i.material-icons &#xE315;
                         .lightbox-list
                             ul
-                                li 1
-                                li 2
-                                li 3
-                                li 4
-                                li 5
-                                li 6
-                                li 7
+                                li
+                                    img(src="img/card.jpg")
+                                li
+                                    img(src="img/card.jpg" style="filter: grayscale(100%)")
+                                li
+                                    img(src="img/card.jpg")
+                                li
+                                    img(src="img/card.jpg" style="filter: blur(2px)")
+                                li
+                                    img(src="img/card.jpg")
+                                li
+                                    img(src="img/card.jpg" style="filter: grayscale(100%)")
+                                li
+                                    img(src="img/card.jpg")
+                                li
+                                    img(src="img/card.jpg" style="filter: blur(2px)")
             .container
                 .title
                     h3 Tabs
                 .content
+                    .panel.panel-tab
+                        .panel-header
+                            - for(i = 1; i < 5; i++)
+                                .tab Tab
+                        .panel-content
+                            - for(var i = 1; i < 5; i++)
+                                .tab-container
+                                    h1= i
             .container
                 .title
                     h3 Control Panel

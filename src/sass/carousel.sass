@@ -58,7 +58,7 @@ $font: 'Lato'
         position: absolute
         top: 0
         left: 0
-        width: 10%
+        width: 20%
         height: 100%
         z-index: 100
         border: 0
@@ -67,13 +67,18 @@ $font: 'Lato'
         color: #fff
         outline: 0
         cursor: pointer
+        opacity: .3
+        -webkit-transition: linear 200ms
+        -moz-transition: linear 200ms
+        -o-transition: linear 200ms
+        transition: linear 200ms
         *
             font-size: 48px
     button.carousel.right
         position: absolute
         top: 0
         right: 0
-        width: 10%
+        width: 20%
         height: 100%
         z-index: 100
         border: 0
@@ -82,8 +87,16 @@ $font: 'Lato'
         color: #fff
         outline: 0
         cursor: pointer
+        opacity: .3
+        -webkit-transition: linear 200ms
+        -moz-transition: linear 200ms
+        -o-transition: linear 200ms
+        transition: linear 200ms
         *
             font-size: 48px
+    button.carousel.left:hover,
+    button.carousel.right:hover
+        opacity: 1
 @media screen and (max-width: 768px)
     .carousel
         .carousel.right

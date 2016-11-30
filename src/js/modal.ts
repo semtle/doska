@@ -22,7 +22,7 @@
         });
     }
     var ModalClose = document.querySelectorAll('.modal-close');
-    console.log(ModalClose.length);
+    // console.log(ModalClose.length);
     for(var i = 0; i < ModalClose.length; i++){
         var Button = ModalClose[i];
         Button.addEventListener('click', function(){
@@ -31,10 +31,20 @@
                 el = el.parentElement;
             }
             el.classList.add('fade');
+            document.body.style.overflowY = 'auto';
         });
-        document.body.style.overflowY = 'auto';
     }
-    window.onclick = function(e){
+    // window.onclick = function(e){
+    //     console.log('click');
+    //     var ModalDialog = document.querySelectorAll('.modal-dialog');
+    //     for(var i = 0; i < ModalDialog.length; i++){
+    //         if(e.target == ModalDialog[i]){
+    //             ModalDialog[i].parentElement.classList.add('fade');
+    //             document.body.style.overflowY = 'auto';
+    //         }    
+    //     }
+    // };
+    window.addEventListener('click', function(e){
         var ModalDialog = document.querySelectorAll('.modal-dialog');
         for(var i = 0; i < ModalDialog.length; i++){
             if(e.target == ModalDialog[i]){
@@ -42,5 +52,5 @@
                 document.body.style.overflowY = 'auto';
             }    
         }
-    };
+    });
 })();

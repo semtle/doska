@@ -30,9 +30,16 @@ gulp.task('images', function() {
         .pipe(gulp.dest('./dist/img'));
 });
 gulp.task('script', function(){
-    return tsProject.src()
-                    .pipe(tsProject())
-                    .pipe(uglify())
-                    .pipe(gulp.dest('./dist/js'));
+    // return tsProject.src()
+    //                 .pipe(tsProject())
+    //                 .pipe(uglify())
+    //                 .pipe(gulp.dest('./dist/js'));
+    return gulp.src('src/**/*.ts')
+        .pipe(ts({
+            noImplicitAny: true,
+            out: 'board.js'
+        }))
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/js'));
 });
 gulp.task('default', ['jade', 'sass', 'images', 'script']);
