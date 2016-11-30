@@ -328,5 +328,18 @@ html(lang="en")
                 .content
 
         footer.page-footer
-
+            .row
+                .col.x-4
+                    a.brand(href="")
+                        h1 Brand Name
+                .col.x-4
+                    ul.social-links
+                        each link in ['social fb', 'social vk', 'social tw', 'social gp', 'social ok', 'social rss']
+                            li
+                                a(class=link href="")
+                .col.x-4
+                    ul.useful-links
+                        each link in ['Правила пользования', 'Правила конфиденциальности', 'Отказ от ответственности', 'Обратная связь']
+                            li
+                                a(href="")= link
         #debug(style="position:fixed; bottom: 0; left: 0; z-index: 9999;")
