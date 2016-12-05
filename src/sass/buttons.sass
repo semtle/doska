@@ -8,7 +8,7 @@ $blue: #2196F3
 $indigo: #3F51B5
 $orange: #FF5722
 // Font
-$font: 'Lato'
+$font: 'Roboto'
 
 .btn
     margin: 5px
@@ -28,6 +28,9 @@ $font: 'Lato'
     transition: linear 150ms
 .btn:hover
     box-shadow: 1px 0 1px rgba(41,41,41,.3),-1px 0 1px rgba(41,41,41,.3),0 2px 5px 3px rgba(141,141,141,.4)
+.btn.btn-lg
+    font-size: 20px
+    padding: 5px 15px
 .btn.btn-default
     background: $white
     color: $black
@@ -56,7 +59,17 @@ $font: 'Lato'
     display: table
     border-radius: 4px
     margin: 5px
+    font-size: 16px
+    table-layout: fixed
     .btn
         float: left
+        display: table-cell
         border-radius: 0
         margin: 0
+        line-height: 20px
+        min-width: 20px
+        text-align: center
+        max-height: 20px
+        box-sizing: content-box
+        i
+            font-size: 16px

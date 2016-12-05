@@ -5,12 +5,28 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Bulletin Board Front-end Framework
         link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto")
         link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
         link(rel="stylesheet", href="css/board.css")
         //- each item in ['js/form.js', 'js/collapse.js', 'js/modal.js', 'js/carousel.js', 'js/lightbox.js']
         //-     script(type="text/javascript", src=item, defer)
         script(type="text/javascript", src="js/board.js", defer)
     body
+        //- header.header-flat
+            .brand
+                a.brand-link(href="") Yatoorist.ru
+                button.menu-collapse
+                    i.material-icons menu
+            .content
+                ul.menu-content
+                    li
+                        button(type="button", data-toggle="modal", data-target="#modal-2") Войти 
+                    li
+                        a(href="")  Регистрация
+                    li
+                        a(href="")  Личный кабинет
+                    li
+                        a(href="")  Выйти
         header.page-header
             .brand
                 a.brand-link(href="") Brand
@@ -18,10 +34,10 @@ html(lang="en")
                 button.menu-collapse(onclick="menuToggle('#menu-content')") 
                     i.material-icons menu
                 .collapse-header(id='menu-content')
-                    a.btn.btn-default(href="javascript:modal('#signin')") Sign initial
-                    a.btn.btn-default(href="?signup") Sign Up
-                    a.btn.btn-default(href="?cabinet") Account
-                    a.btn.btn-default(href="?logout") Sign Out
+                    a.btn.btn-default(href="#", data-toggle="modal" data-target="#modal-2") Вход
+                    a.btn.btn-default(href="?signup") Регистрация
+                    a.btn.btn-default(href="?cabinet") Личный кабинет
+                    a.btn.btn-default(href="?logout") Выйти
         .page
             .container
                 .title
@@ -329,15 +345,15 @@ html(lang="en")
 
         footer.page-footer
             .row
-                .col.x-4
+                .col.x-4.xs-full
                     a.brand(href="")
                         h1 Brand Name
-                .col.x-4
+                .col.x-4.xs-full
                     ul.social-links
                         each link in ['social fb', 'social vk', 'social tw', 'social gp', 'social ok', 'social rss']
                             li
                                 a(class=link href="")
-                .col.x-4
+                .col.x-4.xs-full
                     ul.useful-links
                         each link in ['Правила пользования', 'Правила конфиденциальности', 'Отказ от ответственности', 'Обратная связь']
                             li

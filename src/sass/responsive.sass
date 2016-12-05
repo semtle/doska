@@ -11,7 +11,10 @@
 @for $i from 1 through 12
     .col.x-#{$i}
         width: 100% / 12 * $i
+
 @media screen and (max-width: 480px)
+    .col.offset-1
+        margin-left: 0
     .col.x-1
         width: 33.33%
     .col.x-2
@@ -25,9 +28,51 @@
     .col.x-9,
     .col.x-10,
     .col.x-11,
-    .col.x-12
+    .col.x-12,
+    .xs-half
+        width: 100%
+    .col.x-1.xsm-half,
+    .col.x-2.xsm-half,
+    .col.x-3.xsm-half,
+    .col.x-4.xsm-half,
+    .col.x-5.xsm-half,
+    .col.x-6.xsm-half,
+    .col.x-7.xsm-half,
+    .col.x-8.xsm-half,
+    .col.x-9.xsm-half,
+    .col.x-10.xsm-half,
+    .col.x-11.xsm-half,
+    .col.x-12.xsm-half
+        width: 50%
+    .col.x-1.xs-full,
+    .col.x-2.xs-full,
+    .col.x-3.xs-full,
+    .col.x-4.xs-full,
+    .col.x-5.xs-full,
+    .col.x-6.xs-full,
+    .col.x-7.xs-full,
+    .col.x-8.xs-full,
+    .col.x-9.xs-full,
+    .col.x-10.xs-full,
+    .col.x-11.xs-full,
+    .col.x-12.xs-full
+        width: 100%
+    .col.x-1.xs-none,
+    .col.x-2.xs-none,
+    .col.x-3.xs-none,
+    .col.x-4.xs-none,
+    .col.x-5.xs-none,
+    .col.x-6.xs-none,
+    .col.x-7.xs-none,
+    .col.x-8.xs-none,
+    .col.x-9.xs-none,
+    .col.x-10.xs-none,
+    .col.x-11.xs-none,
+    .col.x-12.xs-none
         width: 100%
 @media screen and (min-width: 481px) and (max-width: 768px)
+    .col.offset-1
+        margin-left: 0
     .col.x-1
         width: 16.66%
     .col.x-2
@@ -36,6 +81,8 @@
         width: 50%
     .col.x-4
         width: 66.66%
+    .col.x-4.xs-half
+        width: 50%
     .col.x-5
         width: 83.33%
     .col.x-6,
@@ -46,7 +93,48 @@
     .col.x-11,
     .col.x-12
         width: 100%
+    .col.x-1.xsm-half,
+    .col.x-2.xsm-half,
+    .col.x-3.xsm-half,
+    .col.x-4.xsm-half,
+    .col.x-5.xsm-half,
+    .col.x-6.xsm-half,
+    .col.x-7.xsm-half,
+    .col.x-8.xsm-half,
+    .col.x-9.xsm-half,
+    .col.x-10.xsm-half,
+    .col.x-11.xsm-half,
+    .col.x-12.xsm-half
+        width: 50%
+    .col.x-1.xs-full,
+    .col.x-2.xs-full,
+    .col.x-3.xs-full,
+    .col.x-4.xs-full,
+    .col.x-5.xs-full,
+    .col.x-6.xs-full,
+    .col.x-7.xs-full,
+    .col.x-8.xs-full,
+    .col.x-9.xs-full,
+    .col.x-10.xs-full,
+    .col.x-11.xs-full,
+    .col.x-12.xs-full
+        width: 100%
+    .col.x-1.xs-none,
+    .col.x-2.xs-none,
+    .col.x-3.xs-none,
+    .col.x-4.xs-none,
+    .col.x-5.xs-none,
+    .col.x-6.xs-none,
+    .col.x-7.xs-none,
+    .col.x-8.xs-none,
+    .col.x-9.xs-none,
+    .col.x-10.xs-none,
+    .col.x-11.xs-none,
+    .col.x-12.xs-none
+        width: 100%
 @media screen and (min-width: 769px) and (max-width: 1024px)
+    .col.offset-1
+        margin-left: 0
     .col.x-1
         width: 12.5%
     .col.x-2

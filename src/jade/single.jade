@@ -1,3 +1,5 @@
+- var images = ['http://cdn.ostrovok.ru/t/1024x768/extranet/media/ec1194b6d4aa4b82a1bbc71138b9b905.jpg','http://1bis.web-espresso.ru/images/cms/data/baza_ot/2v.jpeg','http://vsitury.com.ua/uploads/3/19148/P4.jpg','http://www.отельсоюз.рф/uploads/cache/rn/1024x768/uploads/2013/07/2027lux.jpg','http://www.otels.ru/Fotos/Hotels/4305/Big/02.jpg','http://aviasovet.ru/blog/wp-content/uploads/2013/06/%D1%84%D0%BE%D1%82%D0%BE-3.jpg']
+-var images2 = ['http://kak-vybrat.net/uploads/5268e2a3788fa.jpg', 'http://gazetaingush.ru/sites/default/files/news/20161024-dve-gostinicy-dlya-sportsmenov-s-nomerami-klassa-lyuks-stroyat-v-ingushetii/gg_0.jpg', 'http://transtour-odessa.com/moscow/hotels/img/evrolux06.jpg', 'http://spb.go2all.ru/imgs/19/0/82183.jpg', 'http://img.inforico.com.ua/a/prodam-mini-otel-v-istoricheskom-centre--1657-1351884291922890-2-big.jpg', 'http://transtour-odessa.com/piter/hotels/img/korintiya_nevskiy_palas07.jpg']
 doctype html
 html(lang="ru")
     head
@@ -10,10 +12,13 @@ html(lang="ru")
         link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
         link(rel="stylesheet", href="css/board.css")
         script(type="text/javascript", src="js/board.js", defer)
+        script(type="text/javascript", src="https://vk.com/js/api/openapi.js?136")
+        script.
+            VK.init({apiId: 5732246, onlyWidgets: true});
     body
         header.page-header
             .brand
-                a.brand-link(href="") Yatoorist.ru
+                a.brand-link(href="") Yatoorist
             .header-control
                 button.menu-collapse(onclick="menuToggle('#mainMenu')")
                     i.material-icons menu
@@ -27,40 +32,40 @@ html(lang="ru")
                 .col.x-10.offset-1
                     .container
                         .title
-                            h2(style="font-weight: 400; color: #666; text-align: left") Гостиница "Гаухар", расположенная от озера
+                            h2(style="font-weight: 400; color: #666; padding: 0 30px; text-align: left; text-decoration: underline;") Гостиница "Гаухар", расположенная от озера
                             .row
-                                .col.x-6 Комнаты: 2-х местные, 3-х местные, 4-х местные
-                                .col.x-2 16.03.2016
-                                .col.x-2 3600 Проживающих
+                                .col.x-6.xs-full(style="border-bottom: 1px solid #ddd") Комнаты: 2-х местные, 3-х местные, 4-х местные
+                                .col.x-2.xs-full(style="border-bottom: 1px solid #ddd") 16.03.2016
+                                .col.x-2.xs-full(style="border-bottom: 1px solid #ddd") 3600 Проживающих
                         .content
                             .row
                                 .col.x-9
-                                    .carousel
+                                    #mainSlider.carousel(style="max-height: 370px")
                                         .carousel-content
-                                            .item
-                                                img(src="img/card.jpg", data-toggle="lightbox", data-target="#signleLightbox")
-                                            .item
-                                                img(src="img/card.jpg" style="filter: invert(100%)", data-toggle="lightbox", data-target="#signleLightbox")
-                                            .item
-                                                img(src="img/card.jpg", data-toggle="lightbox", data-target="#signleLightbox")
-                                            .item
-                                                img(src="img/card.jpg" style="filter: grayscale(100%)", data-toggle="lightbox", data-target="#signleLightbox")
+                                            each image, i in images
+                                                .item
+                                                    img(src=image, data-toggle="lightbox", data-target="#signleLightbox")
                                         button.carousel-left
                                             i.material-icons &#xE314;
                                         button.carousel-right
                                             i.material-icons &#xE315;
+                                .col.x-3.xs-none
+                                    .carousel-list(data-toggle="carousel", data-target="#mainSlider")
+                                        each image, i in images
+                                            .item
+                                                img(src=image)
                     .container
                         .content
                             .panel
                                 .row
                                     .col.x-6
-                                        strong Телефон:
+                                        strong Телефон: &nbsp;
                                         | +7 (999) 109-61-24
                                     .col.x-6
-                                        strong Имя: 
+                                        strong Имя: &nbsp;
                                         | Владислав
                                     .col.x-6
-                                        strong Адрес:
+                                        strong Адрес: &nbsp;
                                         | ул. Благородная 36
                     .container
                         .content
@@ -68,14 +73,14 @@ html(lang="ru")
                                 | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                     .container
                         .content
-                            span.chip.chip-indigo Баня
-                            span.chip.chip-indigo Wi-Fi
-                            span.chip.chip-indigo Стоянка
-                            span.chip.chip-indigo Бассейн
-                            span.chip.chip-indigo Манган
-                            span.chip.chip-indigo Детская площадка
-                            span.chip.chip-indigo Можно с питомцами
-                            span.chip.chip-indigo Можно с детьми
+                            span.chip.chip-blue Баня
+                            span.chip.chip-blue Wi-Fi
+                            span.chip.chip-blue Стоянка
+                            span.chip.chip-blue Бассейн
+                            span.chip.chip-blue Манган
+                            span.chip.chip-blue Детская площадка
+                            span.chip.chip-blue Можно с питомцами
+                            span.chip.chip-blue Можно с детьми
                     .container
                         .content
                             .panel.panel-tab
@@ -84,104 +89,322 @@ html(lang="ru")
                                     .tab 3-х Местный Номер
                                     .tab 4-х Местный Номер
                                 .panel-content
-                                    - for(k = 0; k < 3; k++)
-                                        .tab-container
-                                            .row
-                                                .col.x-2
-                                                    img.img-content(src="img/card.jpg")
-                                                .col.x-2
-                                                    img.img-content(src="img/card.jpg")
-                                                .col.x-2
-                                                    img.img-content(src="img/card.jpg")
-                                                .col.x-2
-                                                    img.img-content(src="img/card.jpg")
-                                                .col.x-2
-                                                    img.img-content(src="img/card.jpg")
-                                                .col.x-2
-                                                    img.img-content(src="img/card.jpg")
-                                            .row
-                                                - for(i = 0; i < 3; i++)
-                                                    .col.x-4
-                                                        .calendar.calendar-default
-                                                            table.calendar-content
-                                                                thead.calendar-heading
-                                                                    tr
-                                                                        th(colspan="7") January 2017
-                                                                tbody.calendar-headers
-                                                                    tr
-                                                                        each day in ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-                                                                            td= day
-                                                                tbody.calendar-body
-                                                                    tr
-                                                                        td.past 26
-                                                                        td.past 27
-                                                                        td.past 28
-                                                                        td.past 29
-                                                                        td.past 30
-                                                                        td.past 31
-                                                                        td.booked 1
-                                                                    tr
-                                                                        td.booked 2
-                                                                        td.booked 3
-                                                                        td.booked 4
-                                                                        td.booked 5
-                                                                        td.booked 6
-                                                                        td.booked 7
-                                                                        td.booked 8
-                                                                    tr
-                                                                        td 9
-                                                                        td 10
-                                                                        td 11
-                                                                        td 12
-                                                                        td 13
-                                                                        td.booked 14
-                                                                        td 15
-                                                                    tr
-                                                                        td 16
-                                                                        td 17
-                                                                        td.booked 18
-                                                                        td.booked 19
-                                                                        td.booked 20
-                                                                        td 21
-                                                                        td 22
-                                                                    tr
-                                                                        td 23
-                                                                        td.booked 24
-                                                                        td 25
-                                                                        td.booked 26
-                                                                        td.booked 27
-                                                                        td 28
-                                                                        td 29
-                                                                    tr
-                                                                        td 30
-                                                                        td 31
-                                                                        td.past 1
-                                                                        td.past 2
-                                                                        td.past 3
-                                                                        td.past 4
-                                                                        td.past 5
+                                    .tab-container
+                                        .row
+                                            each item in images
+                                                .col.x-2.xsm-half
+                                                    img.img-content(src=item, style="max-height: 90px; overflow: hidden;")
+                                        .row
+                                            .col.x-4.xs-full
+                                                h3 Удобства
+                                                ul
+                                                    li TV
+                                                    li 1 комната
+                                                    li 2 кровати
+                                                    li Сейф
+                                                    li Видеонаблюдение
+                                            .col.x-4.xs-full
+                                                h3 Кухня
+                                                ul
+                                                    li Газовая плита
+                                                    li Микроволновая печь
+                                                    li Посуда
+                                                    li Холодильник
+                                                    li В номере
+                                            .col.x-4.xs-full
+                                                h3 Санузел
+                                                ul
+                                                    li Общий
+                                                    li Унитаз
+                                                    li Раковина
+                                                    li Душевая кабина
+                                        .row
+                                            - for(i = 0; i < 3; i++)
+                                                .col.x-4.xs-half
+                                                    .calendar.calendar-default
+                                                        table.calendar-content
+                                                            thead.calendar-heading
+                                                                tr
+                                                                    th(colspan="7") Январь 2017
+                                                            tbody.calendar-headers
+                                                                tr
+                                                                    each day in ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                                                                        td= day
+                                                            tbody.calendar-body
+                                                                tr
+                                                                    td.past 26
+                                                                    td.past 27
+                                                                    td.past 28
+                                                                    td.past 29
+                                                                    td.past 30
+                                                                    td.past 31
+                                                                    td.booked 1
+                                                                tr
+                                                                    td.booked 2
+                                                                    td.booked 3
+                                                                    td.booked 4
+                                                                    td.booked 5
+                                                                    td.booked 6
+                                                                    td.booked 7
+                                                                    td.booked 8
+                                                                tr
+                                                                    td 9
+                                                                    td 10
+                                                                    td 11
+                                                                    td 12
+                                                                    td 13
+                                                                    td.booked 14
+                                                                    td 15
+                                                                tr
+                                                                    td 16
+                                                                    td 17
+                                                                    td.booked 18
+                                                                    td.booked 19
+                                                                    td.booked 20
+                                                                    td 21
+                                                                    td 22
+                                                                tr
+                                                                    td 23
+                                                                    td.booked 24
+                                                                    td 25
+                                                                    td.booked 26
+                                                                    td.booked 27
+                                                                    td 28
+                                                                    td 29
+                                                                tr
+                                                                    td 30
+                                                                    td 31
+                                                                    td.past 1
+                                                                    td.past 2
+                                                                    td.past 3
+                                                                    td.past 4
+                                                                    td.past 5
+                                    .tab-container
+                                        .row
+                                            each item in images2
+                                                .col.x-2.xsm-half
+                                                    img.img-content(src=item, style="max-height: 90px; overflow: hidden;")
+                                        .row
+                                            .col.x-4.xs-full
+                                                h3 Удобства
+                                                ul
+                                                    li TV
+                                                    li 1 комната
+                                                    li 2 кровати
+                                                    li Сейф
+                                                    li Видеонаблюдение
+                                            .col.x-4.xs-full
+                                                h3 Кухня
+                                                ul
+                                                    li Газовая плита
+                                                    li Микроволновая печь
+                                                    li Посуда
+                                                    li Холодильник
+                                                    li В номере
+                                            .col.x-4.xs-full
+                                                h3 Санузел
+                                                ul
+                                                    li Общий
+                                                    li Унитаз
+                                                    li Раковина
+                                                    li Душевая кабина
+                                        .row
+                                            - for(i = 0; i < 3; i++)
+                                                .col.x-4.xs-half
+                                                    .calendar.calendar-default
+                                                        table.calendar-content
+                                                            thead.calendar-heading
+                                                                tr
+                                                                    th(colspan="7") Январь 2017
+                                                            tbody.calendar-headers
+                                                                tr
+                                                                    each day in ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                                                                        td= day
+                                                            tbody.calendar-body
+                                                                tr
+                                                                    td.past 26
+                                                                    td.past 27
+                                                                    td.past 28
+                                                                    td.past 29
+                                                                    td.past 30
+                                                                    td.past 31
+                                                                    td.booked 1
+                                                                tr
+                                                                    td.booked 2
+                                                                    td.booked 3
+                                                                    td.booked 4
+                                                                    td.booked 5
+                                                                    td.booked 6
+                                                                    td.booked 7
+                                                                    td.booked 8
+                                                                tr
+                                                                    td 9
+                                                                    td 10
+                                                                    td 11
+                                                                    td 12
+                                                                    td 13
+                                                                    td.booked 14
+                                                                    td 15
+                                                                tr
+                                                                    td 16
+                                                                    td 17
+                                                                    td.booked 18
+                                                                    td.booked 19
+                                                                    td.booked 20
+                                                                    td 21
+                                                                    td 22
+                                                                tr
+                                                                    td 23
+                                                                    td.booked 24
+                                                                    td 25
+                                                                    td.booked 26
+                                                                    td.booked 27
+                                                                    td 28
+                                                                    td 29
+                                                                tr
+                                                                    td 30
+                                                                    td 31
+                                                                    td.past 1
+                                                                    td.past 2
+                                                                    td.past 3
+                                                                    td.past 4
+                                                                    td.past 5
+                                    .tab-container
+                                        .row
+                                            each item in images2
+                                                .col.x-2.xsm-half
+                                                    img.img-content(src=item, style="max-height: 90px; overflow: hidden;")
+                                        .row
+                                            .col.x-4.xs-full
+                                                h3 Удобства
+                                                ul
+                                                    li TV
+                                                    li 1 комната
+                                                    li 2 кровати
+                                                    li Сейф
+                                                    li Видеонаблюдение
+                                            .col.x-4.xs-full
+                                                h3 Кухня
+                                                ul
+                                                    li Газовая плита
+                                                    li Микроволновая печь
+                                                    li Посуда
+                                                    li Холодильник
+                                                    li В номере
+                                            .col.x-4.xs-full
+                                                h3 Санузел
+                                                ul
+                                                    li Общий
+                                                    li Унитаз
+                                                    li Раковина
+                                                    li Душевая кабина
+                                        .row
+                                            - for(i = 0; i < 3; i++)
+                                                .col.x-4.xs-half
+                                                    .calendar.calendar-default
+                                                        table.calendar-content
+                                                            thead.calendar-heading
+                                                                tr
+                                                                    th(colspan="7") Январь 2017
+                                                            tbody.calendar-headers
+                                                                tr
+                                                                    each day in ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                                                                        td= day
+                                                            tbody.calendar-body
+                                                                tr
+                                                                    td.past 26
+                                                                    td.past 27
+                                                                    td.past 28
+                                                                    td.past 29
+                                                                    td.past 30
+                                                                    td.past 31
+                                                                    td.booked 1
+                                                                tr
+                                                                    td.booked 2
+                                                                    td.booked 3
+                                                                    td.booked 4
+                                                                    td.booked 5
+                                                                    td.booked 6
+                                                                    td.booked 7
+                                                                    td.booked 8
+                                                                tr
+                                                                    td 9
+                                                                    td 10
+                                                                    td 11
+                                                                    td 12
+                                                                    td 13
+                                                                    td.booked 14
+                                                                    td 15
+                                                                tr
+                                                                    td 16
+                                                                    td 17
+                                                                    td.booked 18
+                                                                    td.booked 19
+                                                                    td.booked 20
+                                                                    td 21
+                                                                    td 22
+                                                                tr
+                                                                    td 23
+                                                                    td.booked 24
+                                                                    td 25
+                                                                    td.booked 26
+                                                                    td.booked 27
+                                                                    td 28
+                                                                    td 29
+                                                                tr
+                                                                    td 30
+                                                                    td 31
+                                                                    td.past 1
+                                                                    td.past 2
+                                                                    td.past 3
+                                                                    td.past 4
+                                                                    td.past 5
+                                    form#order(style="display: none;")
+                                    button#order-button.btn.btn-blue.btn-lg(type="submit", form="order", style="display: none;") Заказать
                     .container
+                        .content
+                            div#map.map(style="width: 100%; height: 500px")
+                            script.
+                                function myMap(){
+                                    var mapCanvas = document.getElementById("map");
+                                    var mapOptions = {
+                                        center: new google.maps.LatLng(55.7502284, 37.6165348), 
+                                        zoom: 10
+                                    }
+                                    var map = new google.maps.Map(mapCanvas, mapOptions);
+                                }
+                            script(src="https://maps.googleapis.com/maps/api/js?callback=myMap")
                     .container
+                        .content
+                            div#vk_comments(style="width: 100%!important")
+                            script.
+                                VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
         footer.page-footer
             .row
-                .col.x-4
+                .col.x-4.xs-full
                     a.brand(href="")
                         h1 Yatoorist
-                .col.x-4
+                .col.x-4.xs-full
                     ul.social-links
                         each link in ['social fb', 'social vk', 'social tw', 'social gp', 'social ok', 'social rss']
                             li
                                 a(class=link href="")
-                .col.x-4
+                .col.x-4.xs-full
                     ul.useful-links
                         each link in ['Правила пользования', 'Правила конфиденциальности', 'Отказ от ответственности', 'Обратная связь']
                             li
                                 a(href="")= link
         #signin.modal.flag.fade
             .modal-dialog
-                .modal-content
+                #login.modal-content
                     .modal-header
-                        h3 Вход
+                        .row
+                            .col.x-6.xs-half
+                                a(href="#", style="text-decoration: none;")
+                                    h3 Вход
+                            .col.x-6.xs-half
+                                a(href="#", style="text-decoration: none;", onclick="regModal('reg')")
+                                    h3 Регистрация
                         button.modal-close
                             i.material-icons close
                     .modal-body
@@ -192,49 +415,58 @@ html(lang="ru")
                             .form-group
                                 label.form-input(for='password')
                                     input.form-control#password(type="password" label="Пароль")
-                                label.form-check.out(for='memberme', style="text-align: left")
+                                label.form-check.out(for='memberme', style="padding-right: 30px")
                                         input.form-control(type="checkbox", id='memberme', label='Запомнить меня')
                             .form-group
                                 button.btn.btn-indigo(type="submit") Войти
+                #reg.modal-content(style="display: none;")
+                    .modal-header
+                        .row
+                            .col.x-6.xs-half
+                                a(href="#", style="text-decoration: none;", onclick="regModal('login')")
+                                    h3 Вход
+                            .col.x-6.xs-half
+                                a(href="#", style="text-decoration: none;")
+                                    h3 Регистрация
+                        button.modal-close
+                            i.material-icons close
+                    .modal-body
+                        form
+                            .form-group
+                                label.form-input(for='telephone')
+                                    input.form-control#telephone(type="text" label="Номер телефона")
+                            .form-group
+                                label.form-input(for='firstname')
+                                    input.form-control#firstname(type="text" label="Учетная запись")
+                            .form-group
+                                label.form-input(for='ppassword')
+                                    input.form-control#ppassword(type="password" label="Пароль")
+                            .form-group
+                                button.btn.btn-indigo(type="submit") Зарегистрироваться
+                script.
+                    function regModal(type){
+                        if(type=="login"){
+                            document.getElementById('reg').style.display='none';
+                            document.getElementById('login').style.display='block';
+                        }
+                        else if(type=="reg"){
+                            document.getElementById('reg').style.display='block';
+                            document.getElementById('login').style.display='none';
+                        }
+                    }
         #signleLightbox.lightbox.fade
             button.lightbox-close &times;
             .lightbox-viewport
                 .lightbox-content
-                    .image
-                        img(src="img/card.jpg")
-                    .image
-                        img(src="img/card.jpg" style="filter: grayscale(100%)")
-                    .image
-                        img(src="img/card.jpg")
-                    .image
-                        img(src="img/card.jpg" style="filter: blur(2px)")
-                    .image
-                        img(src="img/card.jpg")
-                    .image
-                        img(src="img/card.jpg" style="filter: grayscale(100%)")
-                    .image
-                        img(src="img/card.jpg")
-                    .image
-                        img(src="img/card.jpg" style="filter: blur(2px)")
+                    each image in images
+                        .image
+                            img(src=image)
                 button.lightbox-left
                     i.material-icons &#xE314;
                 button.lightbox-right
                     i.material-icons &#xE315;
             .lightbox-list
                 ul
-                    li
-                        img(src="img/card.jpg")
-                    li
-                        img(src="img/card.jpg" style="filter: grayscale(100%)")
-                    li
-                        img(src="img/card.jpg")
-                    li
-                        img(src="img/card.jpg" style="filter: blur(2px)")
-                    li
-                        img(src="img/card.jpg")
-                    li
-                        img(src="img/card.jpg" style="filter: grayscale(100%)")
-                    li
-                        img(src="img/card.jpg")
-                    li
-                        img(src="img/card.jpg" style="filter: blur(2px)")
+                    each image in images
+                        li
+                            img(src=image)

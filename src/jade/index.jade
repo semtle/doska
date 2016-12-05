@@ -1,0 +1,257 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="robots", content="noindex, nofollow")
+        title Главная
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+        link(rel="stylesheet", href="css/board.css")
+        script(type="text/javascript", src="js/board.js", defer)
+    body
+        header.page-header
+            .brand
+                a.brand-link(href="") Yatoorist
+            .header-control
+                button.menu-collapse(onclick="menuToggle('#mainMenu')")
+                    i.material-icons menu
+                #mainMenu.collapse-header
+                    button.btn.btn-default(data-toggle="modal", data-target="#signin") Войти
+                    a.btn.btn-default(href="") Регистрация
+                    a.btn.btn-default(href="") Мой кабинет
+                    a.btn.btn-default(href="") Выход
+        .form-bar
+            ul.checklist(style="margin: 0")
+                each name, id in {'city-1':'Судак', 'city-2':'Джанкой', 'city-3':'Ялта', 'city-4':'Алушта', 'city-5':'Евпатория'}
+                    li
+                        label.list-check(for=id)
+                            input.list-control(type="checkbox", id=id, label=name, form="searchbox")
+
+                li
+                    label.list-check
+                        span.list-label(data-toggle="modal", data-target="#cities") Еще
+        .page
+            .row
+                .col.x-3.xs-none
+                .col.x-9.xs-full
+                    .container
+            .row
+                .col.x-3.xs-full
+                    .form-ground
+                        .form-toggler(onclick="menuToggle('#mainConfig')")
+                            h3 Показать Конфигуратор
+                        #mainConfig.form-collapse
+                            .form-group.xs
+                                .form-header
+                                    h3 Города
+                                each name, id in {'xcity-1':'Судак', 'xcity-2':'Джанкой', 'xcity-3':'Ялта', 'xcity-4':'Алушта', 'xcity-5':'Евпатория'}
+                                    label.form-check.out(for=id)
+                                        input.form-control(type="checkbox", id=id, label=name, form="searchbox")
+                                
+                                label.form-check.out
+                                    span.form-label(data-toggle="modal", data-target="#cities") Другие города
+                            .form-group
+                                ul.checklist.horisontal
+                                    each name, id in {'type-1':'Квартиры', 'type-2':'Комнаты', 'type-3':'Частные дома', 'type-4':'Гостиницы', 'type-5':'Летние домики'}
+                                        li
+                                            label.list-check(for=id)
+                                                input.list-control(type="checkbox", id=id, label=name, form="searchbox")
+                            .form-group(style='padding-left: 20px')
+                                .form-header
+                                    h3 Удобства
+                                each name, id in {'check-11':'Wi-Fi','check-12':'TV','check-13':'Кондиционер','check-14':'Баня','check-15':'Туалет','check-16':'Бассейн','check-17':'Стоянка','check-18':'Спутниковое TV','check-19':'Балкон'}
+                                    label.form-check.out(for=id)
+                                        input.form-control(type="checkbox", id=id, label=name)
+                            div(style="text-align: center")
+                                input.btn.btn-default(type="submit" value="Поиск" style="font-size: 16px")
+                .col.x-9.xs-half
+                    .row
+                        - for(i = 0; i < 20; i++)
+                            .col.x-4.xs-half
+                                .card.card-default
+                                    .card-picture
+                                        img(src="img/hotel.jpg")
+                                        .price От 1500
+                                    .card-body
+                                        .card-title
+                                            h3 Сдаеться гостиница недалеко от моря
+                                        .card-location
+                                            a.location(href="")
+                                                i.material-icons &#xE0C8;
+                                                | Ялта, ул. Главная 1А
+                                        .card-tags
+                                            ul.tags
+                                                each icon in ['wifi', 'tv', 'restaurant', 'pool']
+                                                    li
+                                                        i.material-icons= icon
+                                        .card-mark
+                                            a.mark(href="") Частный сектор
+                    .btn-group(style="width: 300px; margin-left: calc(50% - 150px)")
+                        a.btn.btn-default
+                            i.material-icons keyboard_arrow_left
+                        a.btn.btn-default(href="") 1
+                        a.btn.btn-default(href="") 2
+                        a.btn.btn-default(href="") 3
+                        a.btn.btn-default(href="") 4
+                        a.btn.btn-default(href="") ...
+                        a.btn.btn-defautl
+                            i.material-icons keyboard_arrow_right
+        footer.page-footer
+            .row
+                .col.x-4.xs-full
+                    a.brand(href="")
+                        h1 Yatoorist
+                .col.x-4.xs-full
+                    ul.social-links
+                        each link in ['social fb', 'social vk', 'social tw', 'social gp', 'social ok', 'social rss']
+                            li
+                                a(class=link href="")
+                .col.x-4.xs-full
+                    ul.useful-links
+                        each link in ['Правила пользования', 'Правила конфиденциальности', 'Отказ от ответственности', 'Обратная связь']
+                            li
+                                a(href="")= link
+        form#searchbox
+        #signin.modal.flag.fade
+            .modal-dialog
+                #login.modal-content
+                    .modal-header
+                        .row
+                            .col.x-6.xs-half
+                                a(href="#", style="text-decoration: none;")
+                                    h3 Вход
+                            .col.x-6.xs-half
+                                a(href="#", style="text-decoration: none;", onclick="regModal('reg')")
+                                    h3 Регистрация
+                        button.modal-close
+                            i.material-icons close
+                    .modal-body
+                        form
+                            .form-group
+                                label.form-input(for='account')
+                                    input.form-control#account(type="text" label="Учетная запись")
+                            .form-group
+                                label.form-input(for='password')
+                                    input.form-control#password(type="password" label="Пароль")
+                                label.form-check.out(for='memberme', style="padding-right: 30px")
+                                        input.form-control(type="checkbox", id='memberme', label='Запомнить меня')
+                            .form-group
+                                button.btn.btn-indigo(type="submit") Войти
+                #reg.modal-content(style="display: none;")
+                    .modal-header
+                        .row
+                            .col.x-6.xs-half
+                                a(href="#", style="text-decoration: none;", onclick="regModal('login')")
+                                    h3 Вход
+                            .col.x-6.xs-half
+                                a(href="#", style="text-decoration: none;")
+                                    h3 Регистрация
+                        button.modal-close
+                            i.material-icons close
+                    .modal-body
+                        form
+                            .form-group
+                                label.form-input(for='telephone')
+                                    input.form-control#telephone(type="text" label="Номер телефона")
+                            .form-group
+                                label.form-input(for='firstname')
+                                    input.form-control#firstname(type="text" label="Учетная запись")
+                            .form-group
+                                label.form-input(for='ppassword')
+                                    input.form-control#ppassword(type="password" label="Пароль")
+                            .form-group
+                                button.btn.btn-indigo(type="submit") Зарегистрироваться
+                script.
+                    function regModal(type){
+                        if(type=="login"){
+                            document.getElementById('reg').style.display='none';
+                            document.getElementById('login').style.display='block';
+                        }
+                        else if(type=="reg"){
+                            document.getElementById('reg').style.display='block';
+                            document.getElementById('login').style.display='none';
+                        }
+                    }
+        #cities.modal.fade
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        h3 Выбрать город
+                        button.modal-close
+                            i.material-icons close
+                    .modal-body
+                        .row
+                            .col.x-3
+                                .form-group
+                                    .form-header
+                                        h4 Южный крым
+                                    label.form-check.out(id="city-11")
+                                        input.form-control(type="checkbox" id="city-11" label="Город")
+                                    label.form-check.out(id="city-12")
+                                        input.form-control(type="checkbox" id="city-12" label="Город")
+                                    label.form-check.out(id="city-13")
+                                        input.form-control(type="checkbox" id="city-13" label="Город")
+                                    label.form-check.out(id="city-14")
+                                        input.form-control(type="checkbox" id="city-14" label="Город")
+                                    label.form-check.out(id="city-15")
+                                        input.form-control(type="checkbox" id="city-15" label="Город")
+                                    label.form-check.out(id="city-16")
+                                        input.form-control(type="checkbox" id="city-16" label="Город")
+                                    label.form-check.out(id="city-17")
+                                        input.form-control(type="checkbox" id="city-17" label="Город")
+                            .col.x-3
+                                .form-group
+                                    .form-header
+                                        h4 Горный крым
+                                    label.form-check.out(id="city-21")
+                                        input.form-control(type="checkbox" id="city-21" label="Город")
+                                    label.form-check.out(id="city-22")
+                                        input.form-control(type="checkbox" id="city-22" label="Город")
+                                    label.form-check.out(id="city-23")
+                                        input.form-control(type="checkbox" id="city-23" label="Город")
+                                    label.form-check.out(id="city-24")
+                                        input.form-control(type="checkbox" id="city-24" label="Город")
+                                    label.form-check.out(id="city-25")
+                                        input.form-control(type="checkbox" id="city-25" label="Город")
+                                    label.form-check.out(id="city-26")
+                                        input.form-control(type="checkbox" id="city-26" label="Город")
+                                    label.form-check.out(id="city-27")
+                                        input.form-control(type="checkbox" id="city-27" label="Город")
+                            .col.x-3
+                                .form-group
+                                    .form-header
+                                        h4 Западный крым
+                                    label.form-check.out(id="city-31")
+                                        input.form-control(type="checkbox" id="city-31" label="Город")
+                                    label.form-check.out(id="city-32")
+                                        input.form-control(type="checkbox" id="city-32" label="Город")
+                                    label.form-check.out(id="city-33")
+                                        input.form-control(type="checkbox" id="city-33" label="Город")
+                                    label.form-check.out(id="city-34")
+                                        input.form-control(type="checkbox" id="city-34" label="Город")
+                                    label.form-check.out(id="city-35")
+                                        input.form-control(type="checkbox" id="city-35" label="Город")
+                                    label.form-check.out(id="city-36")
+                                        input.form-control(type="checkbox" id="city-36" label="Город")
+                                    label.form-check.out(id="city-37")
+                                        input.form-control(type="checkbox" id="city-37" label="Город")
+                            .col.x-3
+                                .form-group
+                                    .form-header
+                                        h4 Восточный крым
+                                    label.form-check.out(id="city-41")
+                                        input.form-control(type="checkbox" id="city-41" label="Город")
+                                    label.form-check.out(id="city-42")
+                                        input.form-control(type="checkbox" id="city-42" label="Город")
+                                    label.form-check.out(id="city-43")
+                                        input.form-control(type="checkbox" id="city-43" label="Город")
+                                    label.form-check.out(id="city-44")
+                                        input.form-control(type="checkbox" id="city-44" label="Город")
+                                    label.form-check.out(id="city-45")
+                                        input.form-control(type="checkbox" id="city-45" label="Город")
+                                    label.form-check.out(id="city-46")
+                                        input.form-control(type="checkbox" id="city-46" label="Город")
+                                    label.form-check.out(id="city-47")
+                                        input.form-control(type="checkbox" id="city-47" label="Город")
